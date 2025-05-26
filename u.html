@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Now Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin-top: 50px;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .card-body {
+      padding: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      width: 100%;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    #onlinePaymentOptions {
+      display: none;
+    }
+    #creditCardFields {
+      display: none;
+    }
+    #paypalFields {
+      display: none;
+    }
+    #message {
+      font-size: 18px;
+      font-weight: bold;
+      color: #28a745;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3>Product Details</h3>
+      </div>
+      <div class="card-body">
+        <h4 class="price">current price: <span>Rs 4000</span></h4>
+        <!-- <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" class="form-control" value="1" min="1" required>
+          </div>
+          <div class="form-group">
+            <label>Payment Method:</label><br>
+            <input type="radio" id="onlinePayment" name="paymentMethod" value="Online Payment">
+            <label for="onlinePayment">Online Payment</label><br>
+            <div id="onlinePaymentOptions">
+
+              <input type="radio" id="creditCard" name="onlinePaymentOption" value="Credit Card">
+              <label for="creditCard">Credit Card</label><br>
+
+              <input type="radio" id="paypal" name="onlinePaymentOption" value="PayPal">
+              <label for="paypal">PayPal</label><br>
+            </div>
+            <input type="radio" id="cashOnDelivery" name="paymentMethod" value="Cash on Delivery">
+            <label for="cashOnDelivery">Cash on Delivery</label><br>
+          </div>
+          <div id="creditCardFields">
+            <div class="form-group">
+              <label for="cardNumber">Credit Card Number:</label>
+              <input type="text" id="cardNumber" class="form-control" placeholder="XXXX-XXXX-XXXX-XXXX">
+            </div>
+            <div class="form-group">
+              <label for="expiryDate">Expiry Date:</label>
+              <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY">
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV:</label>
+              <input type="text" id="cvv" class="form-control" placeholder="CVV">
+            </div>
+          </div>
+          <div id="paypalFields">
+            <div class="form-group">
+              <label for="paypalEmail">PayPal Email:</label>
+              <input type="email" id="paypalEmail" class="form-control" placeholder="Enter your PayPal email">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Buy Now</button>
+        </form>
+        <div id="message" class="mt-3 text-center"></div>
+      </div>
+      <!-- <div id="confirmationMessage" style="display: none;">
+        <h2>Thank You!</h2>
+        <p>Your purchase has been successful.</p>
+        <p id="orderDetails"></p>
+      </div> -->
+      
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    // Extract the price from the URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const price = urlParams.get('price');
+
+    // Update the price field on the Buy Now page
+    const priceElement = document.querySelector('.price span');
+    if (price) {
+      priceElement.textContent = 'Rs ' + price;
+    } else {
+      priceElement.textContent = 'Price not available';
+    }
+  });
+
+
+
+    // Your existing JavaScript code for handling form submission, payment methods, etc. goes here...
+
+    document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var fullName = document.getElementById('fullName').value;
+        var email = document.getElementById('email').value;
+        var address = document.getElementById('address').value;
+        var quantity = parseInt(document.getElementById('quantity').value);
+        var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+        var paymentOption = document.querySelector('input[name="onlinePaymentOption"]:checked');
+        var currentPriceText = document.querySelector('.price span').textContent;
+// Ensure the price text starts with 'Rs ' and remove any commas
+var priceWithoutCurrency = currentPriceText.replace('Rs ', '').replace(/,/g, '');
+var totalPrice = quantity * parseFloat(priceWithoutCurrency);
+
+// Round the total price to the nearest integer
+var totalPriceInt = Math.round(totalPrice);
+        var additionalDetails = '';
+
+        if (paymentOption) {
+            var selectedPaymentOption = paymentOption.value;
+            if (selectedPaymentOption === 'Credit Card') {
+                additionalDetails = ' Credit Card Number: ' + document.getElementById('cardNumber').value + ', Expiry Date: ' + document.getElementById('expiryDate').value + ', CVV: ' + document.getElementById('cvv').value;
+            } else if (selectedPaymentOption === 'PayPal') {
+                additionalDetails = ' PayPal Email: ' + document.getElementById('paypalEmail').value;
+            }
+        }
+
+        var confirmationMessage = 'Thank you, ' + fullName + '! Your purchase has been successful. Total Price: Rs ' + totalPriceInt + '. Payment Method: ' + paymentMethod;        if (paymentOption) {
+            confirmationMessage += ', Payment Option: ' + selectedPaymentOption + additionalDetails;
+        }
+
+        // Display the confirmation message
+        var messageElement = document.getElementById('message');
+        messageElement.innerHTML = confirmationMessage;
+
+        // Show the confirmation message
+        var confirmationMessageElement = document.getElementById('confirmationMessage');
+        confirmationMessageElement.style.display = 'block';
+
+        // Clear the form fields
+        document.getElementById('checkoutForm').reset();
+    });
+});
+
+    document.getElementById('onlinePayment').addEventListener('change', function() {
+      var onlinePaymentOptions = document.getElementById('onlinePaymentOptions');
+      var cashOnDelivery = document.getElementById('cashOnDelivery');
+      if (this.checked) {
+        onlinePaymentOptions.style.display = 'block';
+        cashOnDelivery.checked = false;
+        document.getElementById('creditCardFields').style.display = 'none';
+        document.getElementById('paypalFields').style.display = 'none';
+      }
+    });
+
+    document.getElementById('cashOnDelivery').addEventListener('change', function() {
+      var onlinePaymentOptions = document.getElementById('onlinePaymentOptions');
+      var creditCardFields = document.getElementById('creditCardFields');
+      var paypalFields = document.getElementById('paypalFields');
+      if (this.checked) {
+        onlinePaymentOptions.style.display = 'none';
+        creditCardFields.style.display = 'none';
+        paypalFields.style.display = 'none';
+      }
+    });
+
+    document.getElementById('creditCard').addEventListener('change', function() {
+      var creditCardFields = document.getElementById('creditCardFields');
+      var paypalFields = document.getElementById('paypalFields');
+      if (this.checked) {
+        creditCardFields.style.display = 'block';
+        paypalFields.style.display = 'none';
+      }
+    });
+
+    document.getElementById('paypal').addEventListener('change', function() {
+      var creditCardFields = document.getElementById('creditCardFields');
+      var paypalFields = document.getElementById('paypalFields');
+      if (this.checked) {
+        creditCardFields.style.display = 'none';
+        paypalFields.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data</title>
+</head>
+<body>
+    <center>
+    <form onsubmit="form_data()">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" placeholder="Enter Name" id="name">
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter Email" id="email">
+        </div>
+
+        <div>
+            <label for="contact">Contact</label>
+            <input type="number" placeholder="Enter Contact Number" id="contact">
+        </div>
+
+        <div>
+            <label for="pass">password</label>
+            <input type="password" placeholder="Enter password" id="pass">
+        </div>
+
+        <div>
+            <input type="submit" value="Submit " id="input" >
+        </div>
+    </form>
+
+</center>
+
+
+<script>
+
+function form_data ()
+{
+    let name = document.querySelector("#name").value;
+    let email = document.querySelector("#email").value;
+    let contact = document.querySelector("#contact").value;
+    let password = document.querySelector("#pass").value;
+
+    // document.write("The Name Is " , name , "<br>");
+    // document.write("The Email Is " , email , "<br>");
+    // document.write("The Contact Is " , contact , "<br>");
+    // document.write("The Password Is " , password , "<br>");
+    let arr_items = [name,email,contact,password];
+    for (items of arr_items)
+    {
+        document.write(items , "<br>");
+    }
+}
+
+function input_1()
+{
+    let input = document.querySelector("#input");
+    input.window.location.href = "index.html";
+}
+
+</script>
+</body>
+</html>

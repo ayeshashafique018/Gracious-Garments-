@@ -1,0 +1,82 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the credit card fields */
+#creditCardFields {
+    display: none;
+}
+
+/* Additional styling for form inputs */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+select {
+    appearance: none; /* Remove default arrow in select element */
+}
+
+input[type="number"] {
+    width: 100px; /* Set a specific width for the number input */
+}
+/* Ensure dropdown menu appears downward */
+.custom-select {
+    position: relative;
+}
+
+.custom-select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Style dropdown menu */
+.custom-select::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Additional styling for dropdown menu */
+.custom-select select {
+    padding-right: 30px; /* Adjust based on the arrow's width */
+}
+
+/* Additional information for PayPal and Bank Transfer */
+.custom-select option[value="paypal"], 
+.custom-select option[value="bankTransfer"] {
+    font-style: italic;
+    color: #888;
+}

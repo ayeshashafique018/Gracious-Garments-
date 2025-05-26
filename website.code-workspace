@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../web dev/website"
+		},
+		{
+			"path": "../web dev/zaynblog"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../web dev/intern"
+		},
+		{
+			"path": "../web dev/practice"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "gracious"
+	}
+}

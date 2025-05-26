@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Button</title>
+</head>
+<body>
+  <p style="margin-bottom: 0;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, reiciendis. Cupiditate, odio aut vitae amet suscipit officiis ut laboriosam quia aspernatur quos eius quaerat ad obcaecati quod et quisquam aliquam?
+    <button style="width: 150px; height: 30px; padding: 5px; color: white; background-color: black; position: fixed; bottom: 0; right: 0; display: none;" id="scroll_btn">Top</button>
+  </p>
+
+  <script>
+    const btn = document.querySelector('#scroll_btn');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</body>
+</html>
