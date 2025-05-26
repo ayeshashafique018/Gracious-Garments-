@@ -1,81 +1,89 @@
-# Gracious Garments Website
+# 👗 Gracious Garments Website
 
-## Overview
+A dynamic and responsive website for **Gracious Garments**, a modern clothing brand catering to both men and women. The website offers an intuitive browsing experience, product comparisons, and direct contact options—enhancing customer engagement in the digital age.
 
-Gracious Garments is a clothing company that sells a variety of garments for both men and women. With the rapid development of the internet, Gracious Garments has decided to launch a website to enhance customer interaction and provide easy access to product information. This website will serve as an online portal where customers can explore products, compare items, and contact the company.
+---
 
-## Objective
+## 📌 Project Objective
 
-The goal of the project is to develop a user-friendly, responsive, and feature-rich website that allows users to:
-- Browse different garments categorized by brand.
-- View product details including images, price, size, and features.
-- Download detailed product specifications.
+To develop a user-friendly, responsive web platform that allows users to:
+
+- Browse garments categorized by brand and gender.
+- View detailed product information with high-quality visuals.
+- Download product specifications.
 - Compare products from different brands.
-- Contact the company for inquiries.
+- Easily contact the company for inquiries.
 
-## Features
+---
 
-### 1. Home Page
-- **Graphics**: High-quality images representing men's and women's garments.
-- **Logo**: Prominent placement of the Gracious Garments logo.
-- **Navigation Bar**: Simple and intuitive links to sections like Home, Garments Catalog, Product Categories by Brand, Contact Us, and About Us.
+## 🌟 Key Features
 
-### 2. Product Details
-- Display categories for men's and women's garments.
-- High-quality product images with zoom options.
+### 🏠 Home Page
+- Clean, attractive layout with high-resolution garment images.
+- Prominently placed Gracious Garments logo.
+- Intuitive navigation bar with links to: Home, Catalog, Brands, About Us, and Contact.
 
-### 3. Menu and Navigation
-- Introduction to different types of garments.
-- Link to the shop's physical location via Google Maps (geolocation support).
-- Additional product details such as features, reviews, and specifications.
+### 👕 Product Catalog
+- Separate categories for men's and women's garments.
+- Zoomable product images for a closer look.
+- Display of price, available sizes, colors, and descriptions.
+- "Buy Now" button on each product card.
 
-### 4. Categorization of Products
-- Products are categorized by brand names like "Van Heusen," "Sapphire," etc.
-- Users can select a brand to view products from that brand.
+### 🗂️ Brand-Based Categorization
+- Products grouped under well-known brands like *Van Heusen*, *Sapphire*, etc.
+- Brand filtering to simplify shopping experience.
 
-### 5. Product Selection and Display
-- Each product will display the name, price, size and color options, a brief description, and a "Buy Now" button.
+### 📑 Product Features & Downloads
+- Key features displayed on product pages.
+- Downloadable **MS Word** documents for in-depth specifications.
 
-### 6. Product Features
-- A brief summary of features is displayed directly on the website.
-- Detailed features are stored in downloadable Word documents.
+### 🔄 Product Comparison
+- Simple comparison tool to contrast features and pricing across brands.
 
-### 7. Product Comparison
-- Users can compare similar products from different brands using a simple and clear comparison tool.
+### 📍 Contact Page
+- Company address and clickable email for instant queries.
+- Google Maps integration for physical store location.
 
-### 8. Contact Us Page
-- Displays the company address and email with a clickable mail link for easy contact.
+---
 
-## Hardware and Software Requirements
+## 🧰 Tools & Technologies
 
-### Hardware Requirements:
-- **Processor**: Pentium 166 MHz or better
-- **RAM**: At least 64MB
-- **Internet**: Required for accessing the website
+### 💻 Frontend
+- **HTML5** – Semantic markup  
+- **CSS3** – Styling and layout  
+- **JavaScript** – Interactivity  
+- **Bootstrap / React / Angular** – Responsive and dynamic UI  
+- **Figma** – Design prototyping  
 
-### Software Requirements:
-- **HTML Editors**: Notepad, CoffeeCup, Dreamweaver, Figma
-- **Web Technologies**:
-  - Frontend Frameworks: Angular, Angular JS, React, or Bootstrap
-  - HTML5 for semantic markup
-  - CSS3 for styling
-  - JavaScript for interactivity
-  - Geolocation API for location display
+### 🌐 Web Features
+- Geolocation API – For displaying shop location  
+- Downloadable content – Product spec sheets in MS Word format  
 
-- **Browsers for Testing**:
-  - Chrome
-  - Firefox
-  - Internet Explorer (IE)
-  - Microsoft Edge
+### 🧪 Browsers Tested
+- Google Chrome  
+- Mozilla Firefox  
+- Microsoft Edge  
+- Internet Explorer  
 
-### Content Management:
-- **MS Word** for storing and downloading product features
+---
 
-## Installation
+## 🖥️ System Requirements
 
-To run this project locally, follow these steps:
+### Hardware
+- **Processor**: Pentium 166 MHz or better  
+- **RAM**: Minimum 64 MB  
+- **Internet**: Required for access  
+
+### Software
+- Code Editors: Notepad, CoffeeCup, Dreamweaver  
+- Document Tool: MS Word  
+
+---
+
+## 🚀 Getting Started
+
+To run the project locally:
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/gracious-garments.git
-
